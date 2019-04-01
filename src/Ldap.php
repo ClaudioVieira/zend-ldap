@@ -514,7 +514,7 @@ class Ldap
         }
         if (! $this->getBindRequiresDn()) {
             // is there a better way to detect this?
-            return sprintf("(&(objectClass=user)(sAMAccountName=%s))", $aname);
+            return sprintf("(&(objectClass=user)(displayName=%s))", $aname); // return sprintf("(&(objectClass=user)(sAMAccountName=%s))", $aname);
         }
 
         return sprintf("(&(objectClass=posixAccount)(uid=%s))", $aname);
